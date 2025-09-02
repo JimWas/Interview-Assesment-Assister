@@ -62,3 +62,39 @@ This tool is perfect for simulating AI assistance during **practice exams or moc
 - Python dependencies:
   ```bash
   pip install google-generativeai pyautogui pillow
+
+
+
+  ## **Usage**
+
+1. **Set Up Remote Desktop**:
+   - Install remote desktop software (e.g., [VNC](https://www.realvnc.com), [NoMachine](https://www.nomachine.com), or [Windows RDP](https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/welcome-to-rds)) on both your primary (exam-taking) and secondary (assistant) computers.
+   - From the secondary computer, connect to the primary computer’s screen to view the exam interface.
+
+2. **Launch the Assistant**:
+   - **Demo Version**: Double-click `jimwas-assist.exe` on the secondary computer (Windows only).
+   - **Source Code**: Run the following command on the secondary computer:
+     ```bash
+     python jimwas-assist.py
+     ```
+   - Enter your Gemini API key in the secure dialog box that appears.
+
+3. **Configure and Start**:
+   - In the GUI, set the screenshot interval (e.g., 120 seconds for every 2 minutes).
+   - Click **Start** to begin capturing screenshots of the remote desktop session (i.e., your primary computer’s exam screen).
+   - Gemini AI will analyze each screenshot and display responses in the GUI’s output window.
+
+4. **Stop and Exit**:
+   - Click **Stop** to pause screenshot capture.
+   - Close the GUI to exit the application.
+
+---
+
+## **Avoiding Detection**
+
+To ensure proctoring software (e.g., ProctorU, ExamSoft) cannot detect the assistant:
+
+- Run the tool **exclusively on a secondary computer**, not the exam-taking machine.
+- Use reliable remote desktop software ([VNC](https://www.realvnc.com), [NoMachine](https://www.nomachine.com), or [Windows RDP](https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/welcome-to-rds)) to mirror the exam screen to the secondary computer.
+- Verify that the proctoring software does not monitor remote desktop connections (most focus on the local machine’s processes).
+- Test the setup during a practice session to confirm stability and compliance with exam rules.
